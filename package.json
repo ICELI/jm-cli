@@ -4,11 +4,16 @@
   "description": "a cli for jumore FE team",
   "keywords": [],
   "author": "iceli <woticeli@gmail.com>",
-  "repository": { "type": "git", "url": "git://github.com/iceli/jm-cli.git" },
-  "bin": {
-    "jm": "./lib/jm-cli.js"
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/iceli/jm-cli.git"
   },
-  "dependencies": {},
+  "bin": {
+    "jm": "./bin/jm"
+  },
+  "dependencies": {
+    "commander": "^2.9.0"
+  },
   "devDependencies": {
     "mocha": "*",
     "should": "*"
