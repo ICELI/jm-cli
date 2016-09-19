@@ -12,7 +12,8 @@
     "jm": "./bin/jm"
   },
   "dependencies": {
-    "commander": "^2.9.0"
+    "commander": "^2.9.0",
+    "shelljs": "^0.7.4"
   },
   "devDependencies": {
     "mocha": "*",
