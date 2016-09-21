@@ -2,6 +2,47 @@
 # jm-cli
 
   a cli for jumore FE team
+  
+## install
+
+```cmd
+npm i -g jm-cli
+```
+
+## how to use
+init an angularjs project that build with webpack
+
+```
+mkdir ng-demo && cd ng-demo
+jm init
+```
+install package
+	
+```
+jm install 
+```
+or
+	
+```
+jm i
+```
+
+dev build
+
+```
+jm dev
+```
+
+production build
+
+```
+jm production
+```
+open browser
+
+```
+http://localhost:8081
+```
 
 ## License 
 
