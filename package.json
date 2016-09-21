@@ -1,12 +1,12 @@
 {
   "name": "jm-cli",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "a cli for jumore FE team",
   "keywords": [],
   "author": "iceli <woticeli@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/iceli/jm-cli.git"
+    "url": "https://github.com/ICELI/jm-cli.git"
   },
   "bin": {
     "jm": "./bin/jm"
