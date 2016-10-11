@@ -1,15 +1,14 @@
 # jm-cli
-
-  a cli for jumore FE team
+> A cli for jumore FE team
   
-## install
+## Install:
 
 ```cmd
 npm i -g jm-cli
 ```
 
 ## Usage
-init an angularjs project that build with webpack
+Init an angularjs project that build with webpack
 
 ```
 mkdir ng-demo && cd ng-demo
