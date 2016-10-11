@@ -9,7 +9,7 @@
 npm i -g jm-cli
 ```
 
-## how to use
+## Usage
 init an angularjs project that build with webpack
 
 ```
