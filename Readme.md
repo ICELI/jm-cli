@@ -3,9 +3,20 @@
   
 ## Install:
 
-```cmd
+### form npm
+```git
 npm i -g jm-cli
 ```
+
+### form github(latest)
+
+```git
+git clone https://github.com/jm-team/jm-cli.git
+cd jm-cli
+git submodule init && git submodule update 
+npm link
+```
+
 
 ## Usage
 Init an angularjs project that build with webpack
