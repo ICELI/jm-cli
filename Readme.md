@@ -13,7 +13,6 @@ npm i -g jm-cli
 ```git
 git clone https://github.com/jm-team/jm-cli.git
 cd jm-cli
-git submodule init && git submodule update 
 npm link
 ```
 
@@ -22,30 +21,30 @@ npm link
 Init an angularjs project that build with webpack
 
 ```
-mkdir ng-demo && cd ng-demo
-jm init
+$ jm init ng ng-demo 
+$ cd ng-demo
 ```
 install package
 	
 ```
-jm install 
+$ jm install 
 ```
 or
 	
 ```
-jm i
+$ jm i
 ```
 
 dev build
 
 ```
-jm dev
+$ jm dev
 ```
 
 production build
 
 ```
-jm production
+$ jm build
 ```
 open browser
 
