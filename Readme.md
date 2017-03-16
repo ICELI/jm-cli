@@ -1,7 +1,56 @@
-
 # jm-cli
+> A cli for jumore FE team
+  
+## Install:
 
-  a cli for jumore FE team
+### form npm
+```bash
+$ npm i -g jm-cli
+```
+
+### form github(latest)
+
+```bash
+$ git clone https://github.com/jm-team/jm-cli.git
+$ cd jm-cli
+$ npm link
+```
+
+
+## Usage
+Init an angularjs project that build with webpack
+
+```bash
+$ jm init ng ng-demo 
+$ cd ng-demo
+```
+install package
+	
+```bash
+$ jm install 
+```
+or
+	
+```bash
+$ jm i
+```
+
+dev build
+
+```bash
+$ jm dev
+```
+
+production build
+
+```bash
+$ jm build
+```
+open browser
+
+```
+http://localhost:8081
+```
 
 ## License 
 
