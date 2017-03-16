@@ -1,6 +1,6 @@
 {
   "name": "jm-cli",
-  "version": "1.0.0",
+  "version": "1.0.0-rc.1",
   "description": "a cli for jumore FE team",
   "keywords": [
     "cli",
