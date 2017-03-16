@@ -1,3 +1,0 @@
-[submodule "tpl/webapp"]
-	path = tpl/webapp
-	url = https://github.com/jm-team/ng-seed.git
