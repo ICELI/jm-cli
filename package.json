@@ -10,7 +10,7 @@
   "author": "iceli <woticeli@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jm-team/jm-cli.git"
+    "url": "git+https://github.com/jm-team/jm-cli.git"
   },
   "bin": {
     "jm": "./bin/jm"
@@ -25,5 +25,14 @@
   "devDependencies": {
     "mocha": "*",
     "should": "*"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/jm-team/jm-cli/issues"
+  },
+  "homepage": "https://github.com/jm-team/jm-cli#readme",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "license": "MIT"
 }
