@@ -5,15 +5,15 @@
 
 ### form npm
 ```git
-npm i -g jm-cli
+$ npm i -g jm-cli
 ```
 
 ### form github(latest)
 
 ```git
-git clone https://github.com/jm-team/jm-cli.git
-cd jm-cli
-npm link
+$ git clone https://github.com/jm-team/jm-cli.git
+$ cd jm-cli
+$ npm link
 ```
 
 
