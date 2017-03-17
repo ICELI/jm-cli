@@ -1,5 +1,5 @@
 # jm-cli
-> A cli for jumore FE team
+> a CLI tool for jumore FE team
   
 ## Install:
 
@@ -23,6 +23,11 @@ Init an angularjs project that build with webpack
 ```bash
 $ jm init ng ng-demo 
 $ cd ng-demo
+```
+Vue2 project
+```bash
+$ jm init vue vue-demo 
+$ cd vue-demo
 ```
 install package
 	
