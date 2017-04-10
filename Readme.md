@@ -24,6 +24,13 @@ Init an angularjs project that build with webpack
 $ jm init ng ng-demo 
 $ cd ng-demo
 ```
+or an vue2 project
+
+```bash
+$ jm init vue vue-demo 
+$ cd vue-demo
+```
+
 install package
 	
 ```bash
