@@ -26,7 +26,7 @@ $ cd ng-demo
 ```
 Vue2 project
 ```bash
-$ jm init vue vue-demo 
+$ jm init vue vue-demo
 $ cd vue-demo
 ```
 install package
