@@ -1,7 +1,7 @@
 {
   "name": "jm-cli",
   "version": "1.1.0",
-  "description": "a cli for jumore FE team",
+  "description": "a cli tool for jumore FE team",
   "keywords": [
     "cli",
     "ng",
@@ -25,10 +25,6 @@
     "ora": "^1.1.0",
     "shelljs": "^0.7.4",
     "validate-commit-msg": "^2.12.1"
-  },
-  "devDependencies": {
-    "mocha": "*",
-    "should": "*"
   },
   "bugs": {
     "url": "https://github.com/jm-team/jm-cli/issues"
