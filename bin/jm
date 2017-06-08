@@ -4,4 +4,134 @@
 
 process.title = 'jm';
 
-require('../lib/jm-cli');
+const fs = require('fs');
+const program = require('commander');
+const shell = require('shelljs/global');
+const ora = require('ora');
+const chalk = require('chalk');
+
+const resolve = require('../lib/util').resolve;
+const initProject = require('../lib/init').init;
+const updateGhPages = require('../lib/gh-pages').updateGhPages;
+const genAuthor = require('../lib/author').author;
+const confPath = './config/jm.config.json'; // TODO: -c 配置文件路径
+let conf = null;
+
+if (fs.existsSync(resolve(confPath))) {
+    conf = require(resolve(confPath));
+} else {
+    console.error('Can not find jm.config.json')
+}
+
+program
+    .usage('<command> [options]')
+    .version(require('../package.json').version)
+
+program
+    .command('init')
+    .usage('<project-type> [project-name]')
+    .description('initialize project, you can choose the framework with AngularJS or Vue2')
+    .action(function () {
+        initProject()
+    });
+
+program
+    .command('install')
+    .alias('i')
+    .description('Install Package')
+    .action(function () {
+        const spinner = ora('Installing Package...');
+        spinner.start();
+        exec('yarn install', {async: true}, function (code, stdout, stderr) {
+            spinner.stop();
+            console.log('Exit code:', code);
+            console.log('Program output:', stdout);
+            console.log('Program stderr:', stderr);
+        });
+    });
+
+program
+    .command('dev')
+    .description('dev build')
+    .action(function () {
+        exec('yarn run dev');
+    });
+
+program
+    .command('build')
+    .description('production build')
+    .action(function () {
+        exec('yarn run build');
+    });
+
+program
+    .command('seed')
+    .description('publish seed')
+    .action(function () {
+        exec('jm jsdoc && jm changelog && jm author && jm site');
+    });
+
+program
+    .command('jsdoc')
+    .description('generator jsdoc')
+    .action(function () {
+        exec('jsdoc -c ' + confPath);
+    });
+
+program
+    .command('changelog')
+    .description('generator changelog.md')
+    .action(function () {
+        exec('conventional-changelog -p angular -i CHANGELOG.md -s -r 0');
+    });
+
+program
+    .command('author')
+    .description('generator authors.md')
+    .action(function () {
+        const fileName = 'AUTHORS.md';
+        const exclude = conf.authors.exclude;
+
+        genAuthor(fileName, exclude);
+    });
+
+
+program
+    .command('site')
+    .description('push gh-pages')
+    .action(function () {
+        const list = conf['gh-pages'].list;
+
+        updateGhPages(list);
+    });
+
+program
+    .command('ng:page')
+    .description('generator new page')
+    .action(function () {
+        let pagePath = program.args[0];
+
+        if (fs.existsSync(resolve('./src/page/' + pagePath))) {
+            console.error(resolve('./src/page/' + pagePath) + ' 该文件目录已存在！！！')
+        } else {
+            fs.mkdir(resolve('./src/page/' + pagePath), function () {
+                console.error(resolve('./src/page/' + pagePath) + ' 该文件目录已创建！！！')
+                // copy ctrl
+                // copy html
+                // copy router
+            })
+        }
+    });
+
+/**
+ * help
+ */
+
+function help() {
+    program.parse(process.argv)
+    if (program.args.length < 1) {
+        return program.help()
+    }
+}
+
+help();
