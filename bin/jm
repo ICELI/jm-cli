@@ -8,24 +8,17 @@ const fs = require('fs');
 const program = require('commander');
 const shell = require('shelljs/global');
 const ora = require('ora');
-const chalk = require('chalk');
 
-const resolve = require('../lib/util').resolve;
 const initProject = require('../lib/init').init;
 const updateGhPages = require('../lib/gh-pages').updateGhPages;
 const genAuthor = require('../lib/author').author;
-const confPath = './config/jm.config.json'; // TODO: -c 配置文件路径
-let conf = null;
-
-if (fs.existsSync(resolve(confPath))) {
-    conf = require(resolve(confPath));
-} else {
-    console.error('Can not find jm.config.json')
-}
+const genPage = require('../lib/page').page;
+const getOptions = require('../lib/options').options;
 
 program
     .usage('<command> [options]')
     .version(require('../package.json').version)
+    .option('-c, --config [path]', 'config file path')
 
 program
     .command('init')
@@ -75,6 +68,8 @@ program
     .command('jsdoc')
     .description('generator jsdoc')
     .action(function () {
+        const confPath = program.config || './config/jm.config.json';
+
         exec('jsdoc -c ' + confPath);
     });
 
@@ -89,8 +84,9 @@ program
     .command('author')
     .description('generator authors.md')
     .action(function () {
+        const options = getOptions();
         const fileName = 'AUTHORS.md';
-        const exclude = conf.authors.exclude;
+        const exclude = options.authors.exclude;
 
         genAuthor(fileName, exclude);
     });
@@ -100,7 +96,8 @@ program
     .command('site')
     .description('push gh-pages')
     .action(function () {
-        const list = conf['gh-pages'].list;
+        const options = getOptions();
+        const list = options['gh-pages'].list;
 
         updateGhPages(list);
     });
@@ -109,18 +106,7 @@ program
     .command('ng:page')
     .description('generator new page')
     .action(function () {
-        let pagePath = program.args[0];
-
-        if (fs.existsSync(resolve('./src/page/' + pagePath))) {
-            console.error(resolve('./src/page/' + pagePath) + ' 该文件目录已存在！！！')
-        } else {
-            fs.mkdir(resolve('./src/page/' + pagePath), function () {
-                console.error(resolve('./src/page/' + pagePath) + ' 该文件目录已创建！！！')
-                // copy ctrl
-                // copy html
-                // copy router
-            })
-        }
+        genPage()
     });
 
 /**

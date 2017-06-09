@@ -3,19 +3,18 @@
   
 ## Install:
 
-### form npm
+### from npm
 ```bash
 $ npm i -g jm-cli
 ```
 
-### form github(latest)
+### from github(latest)
 
 ```bash
 $ git clone https://github.com/jm-team/jm-cli.git
 $ cd jm-cli
 $ npm link
 ```
-
 
 ## Usage
 Init an angularjs project that build with webpack
@@ -56,6 +55,33 @@ open browser
 ```
 http://localhost:8081
 ```
+
+```bash
+
+  Usage: jm <command> [options]
+
+
+  Commands:
+
+    init        initialize project, you can choose the framework with AngularJS or Vue2
+    install|i   Install Package
+    dev         dev build
+    build       production build
+    seed        publish seed
+    jsdoc       generator jsdoc
+    changelog   generator changelog.md
+    author      generator authors.md
+    site        push gh-pages
+    ng:page     generator new page
+
+  Options:
+
+    -h, --help           output usage information
+    -V, --version        output the version number
+    -c, --config [path]  config file path
+
+```
+
 
 ## License 
 
