@@ -63,9 +63,13 @@ $ jm ng:page pageName
 $ jm ng:page path/pageName
 ```
 
-gen author.md
+gen AUTHORS.md
 ```bash
-$ jm author
+$ jm author 
+# AUTHORS.md - default file name
+
+$ jm author author.md 
+# author.md - program.args[0] as file name
 ```
 author.md
 ```markdown
