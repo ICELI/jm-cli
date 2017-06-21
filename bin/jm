@@ -85,7 +85,7 @@ program
     .description('generator authors.md')
     .action(function () {
         const options = getOptions();
-        const fileName = program.args[0] || 'AUTHORS.md';
+        const fileName = typeof program.args[0] === 'string' ? program.args[0] : 'AUTHORS.md';
         const exclude = options.authors.exclude;
 
         genAuthor(fileName, exclude);
