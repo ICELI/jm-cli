@@ -8,6 +8,7 @@ const fs = require('fs');
 const program = require('commander');
 const shell = require('shelljs/global');
 const ora = require('ora');
+const conventionalChangelog = require('conventional-changelog');
 
 const initProject = require('../lib/init').init;
 const updateGhPages = require('../lib/gh-pages').updateGhPages;
@@ -74,10 +75,21 @@ program
     });
 
 program
-    .command('changelog')
-    .description('generator changelog.md')
-    .action(function () {
-        exec('conventional-changelog -p angular -i CHANGELOG.md -s -r 0');
+    .command('changelog').
+    description('generator CHANGELOG.md').
+    action(function() {
+      const fileName = typeof program.args[0] === 'string' ? program.args[0] : 'CHANGELOG.md';
+
+      conventionalChangelog({
+        preset: 'angular',
+        releaseCount: 0
+      })
+      .pipe(fs.createWriteStream(fileName)); // or any writable stream
+
+      console.log('================================')
+      console.log(` ${fileName} already created!  `)
+      console.log('================================')
+      // exec('conventional-changelog -p angular -i CHANGELOG.md -s -r 0');
     });
 
 program
