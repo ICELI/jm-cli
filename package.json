@@ -29,7 +29,7 @@
     "url": "https://github.com/jm-team/jm-cli/issues"
   },
   "homepage": "https://github.com/jm-team/jm-cli#readme",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "test": "mocha"
   },

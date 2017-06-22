@@ -10,11 +10,7 @@ const shell = require('shelljs/global');
 const ora = require('ora');
 const conventionalChangelog = require('conventional-changelog');
 
-const initProject = require('../lib/init').init;
-const updateGhPages = require('../lib/gh-pages').updateGhPages;
-const genAuthor = require('../lib/author').author;
-const genPage = require('../lib/page').page;
-const getOptions = require('../lib/options').options;
+const { initProject, updateGhPages, genAuthor, genPage, getOptions } = require('../lib');
 
 program
     .usage('<command> [options]')
