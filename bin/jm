@@ -15,7 +15,7 @@ const { initProject, updateGhPages, genAuthor, genPage, getOptions } = require('
 program
     .usage('<command> [options]')
     .version(require('../package.json').version)
-    .option('-c, --config [path]', 'config file path')
+    .option('-c, --config <path>', 'config file path')
 
 program
     .command('init')
@@ -63,11 +63,21 @@ program
 
 program
     .command('jsdoc')
+    .alias('doc')
     .description('generator jsdoc')
     .action(function () {
-        const confPath = program.config || './config/jm.config.json';
-
-        exec('jsdoc -c ' + confPath);
+        if(program.config) {
+            require('jsdoc/jsdoc');
+            console.log('================================')
+            console.log(`     jsdoc already created!     `)
+            console.log('================================')
+        } else {
+            console.log('====================================')
+            console.log('$ jm doc -c ./config/jm.config.json ')
+            console.log('====================================')
+            console.log('The path to the configuration file. Default: ./config/jm.config.json')
+        }
+        // exec('jsdoc -c ' + confPath);
     });
 
 program

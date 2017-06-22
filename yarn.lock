@@ -2319,7 +2319,7 @@ jsbn@~0.1.0:
 
 jsdoc@^3.4.3:
   version "3.4.3"
-  resolved "https://registry.npmjs.org/jsdoc/-/jsdoc-3.4.3.tgz#e5740d6145c681f6679e6c17783a88dbdd97ccd3"
+  resolved "http://registry.npm.taobao.org/jsdoc/download/jsdoc-3.4.3.tgz#e5740d6145c681f6679e6c17783a88dbdd97ccd3"
   dependencies:
     bluebird "~3.4.6"
     catharsis "~0.8.8"
