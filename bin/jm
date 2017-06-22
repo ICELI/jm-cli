@@ -94,11 +94,11 @@ program
 
 program
     .command('author')
-    .description('generator authors.md')
+    .description('generator AUTHORS.md')
     .action(function () {
         const options = getOptions();
         const fileName = typeof program.args[0] === 'string' ? program.args[0] : 'AUTHORS.md';
-        const exclude = options.authors.exclude;
+        const exclude = options.authors && options.authors.exclude;
 
         genAuthor(fileName, exclude);
     });
