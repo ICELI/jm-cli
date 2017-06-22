@@ -1,11 +1,16 @@
 <a name="1.2.2"></a>
-## [1.2.2](https://github.com/jm-team/jm-cli/compare/v1.2.0...v1.2.2) (2017-06-22)
+## [1.2.2](https://github.com/jm-team/jm-cli/compare/v1.2.1...v1.2.2) (2017-06-21)
 
 
 ### Bug Fixes
 
 * author method ([b5c2813](https://github.com/jm-team/jm-cli/commit/b5c2813))
 * gh-pages diff repo must clean ([397258e](https://github.com/jm-team/jm-cli/commit/397258e))
+
+
+
+<a name="1.2.1"></a>
+## [1.2.1](https://github.com/jm-team/jm-cli/compare/v1.2.0...v1.2.1) (2017-06-21)
 
 
 ### Features
