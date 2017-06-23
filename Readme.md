@@ -133,11 +133,11 @@ $ jm ng:page path/pageName
     build         production build
     server|s      production service
     seed          publish seed
-    jsdoc|d       generator jsdoc
-    changelog|l   generator CHANGELOG.md
-    author|a      generator AUTHORS.md
+    jsdoc|d       generate jsdoc
+    changelog|l   generate CHANGELOG.md
+    author|a      generate AUTHORS.md
     site          push gh-pages
-    ng:page       generator new page
+    ng:page       generate new page
 
   Options:
 

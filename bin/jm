@@ -79,7 +79,7 @@ program
     .command('jsdoc')
     .alias('d')
     .usage('-c <path>')
-    .description('generator jsdoc')
+    .description('generate jsdoc')
     .action(function () {
         if(program.config) {
             require('jsdoc/jsdoc');
@@ -98,7 +98,7 @@ program
 program
     .command('changelog')
     .alias('l')
-    .description('generator CHANGELOG.md')
+    .description('generate CHANGELOG.md')
     .action(function() {
       const fileName = typeof program.args[0] === 'string' ? program.args[0] : 'CHANGELOG.md';
 
@@ -117,7 +117,7 @@ program
 program
     .command('author')
     .alias('a')
-    .description('generator AUTHORS.md')
+    .description('generate AUTHORS.md')
     .action(function () {
         const options = getOptions();
         const fileName = typeof program.args[0] === 'string' ? program.args[0] : 'AUTHORS.md';
@@ -139,7 +139,7 @@ program
 
 program
     .command('ng:page')
-    .description('generator new page')
+    .description('generate new page')
     .action(function () {
         genPage()
     });
