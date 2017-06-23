@@ -1,3 +1,19 @@
+<a name="1.2.3"></a>
+## [1.2.3](https://github.com/jm-team/jm-cli/compare/v1.2.2...v1.2.3) (2017-06-23)
+
+
+### Bug Fixes
+
+* if don't have config file ([99dc1b3](https://github.com/jm-team/jm-cli/commit/99dc1b3))
+
+
+### Features
+
+* add jm s command ([89b3e16](https://github.com/jm-team/jm-cli/commit/89b3e16))
+* require jsdoc without cli ([47c47e8](https://github.com/jm-team/jm-cli/commit/47c47e8))
+
+
+
 <a name="1.2.2"></a>
 ## [1.2.2](https://github.com/jm-team/jm-cli/compare/v1.2.1...v1.2.2) (2017-06-21)
 
