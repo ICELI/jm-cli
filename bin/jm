@@ -55,6 +55,20 @@ program
     });
 
 program
+    .command('server')
+    .alias('s')
+    .description('production service')
+    .action(function () {
+        if(fs.existsSync('./server.js')) {
+          exec('node server');
+        } else {
+          console.log('================================')
+          console.log(`  can't found server.js at root `)
+          console.log('================================')
+        }
+    });
+
+program
     .command('seed')
     .description('publish seed')
     .action(function () {
