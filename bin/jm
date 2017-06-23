@@ -15,7 +15,7 @@ const { initProject, updateGhPages, genAuthor, genPage, getOptions } = require('
 program
     .usage('<command> [options]')
     .version(require('../package.json').version)
-    .option('-c, --config <path>', 'config file path')
+    .option('-c, --configure <path>', 'config file path')
 
 program
     .command('init')
@@ -64,6 +64,7 @@ program
 program
     .command('jsdoc')
     .alias('doc')
+    .usage('-c <path>')
     .description('generator jsdoc')
     .action(function () {
         if(program.config) {
@@ -81,9 +82,10 @@ program
     });
 
 program
-    .command('changelog').
-    description('generator CHANGELOG.md').
-    action(function() {
+    .command('changelog')
+    .alias('log')
+    .description('generator CHANGELOG.md')
+    .action(function() {
       const fileName = typeof program.args[0] === 'string' ? program.args[0] : 'CHANGELOG.md';
 
       conventionalChangelog({
@@ -93,7 +95,7 @@ program
       .pipe(fs.createWriteStream(fileName)); // or any writable stream
 
       console.log('================================')
-      console.log(` ${fileName} already created!  `)
+      console.log(`  ${fileName} already created!  `)
       console.log('================================')
       // exec('conventional-changelog -p angular -i CHANGELOG.md -s -r 0');
     });
