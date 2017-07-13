@@ -79,7 +79,7 @@ $ jm changelog
 $ jm l
 # CHANGELOG.md - default file name
 
-$ jm log log.md 
+$ jm l log.md 
 # log.md - program.args[0] as file name
 ```
 
@@ -90,7 +90,7 @@ $ jm author
 $ jm a
 # AUTHORS.md - default file name
 
-$ jm author author.md 
+$ jm a author.md 
 # author.md - program.args[0] as file name
 ```
 author.md
@@ -109,7 +109,7 @@ author.md
 gen gh-pages
 ```bash
 $ jm site
-# push dist/ to github pages
+# push dist/ to github repository branch gh-pages
 ```
 
 gen new page for angular project
